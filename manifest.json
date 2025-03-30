@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "HyperPlay - YouTube Speed Controller",
+    "version": "1.0",
+    "description": "Control and maintain YouTube playback speed.",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "host_permissions": ["*://www.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
